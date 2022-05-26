@@ -45,11 +45,11 @@ table {
 /* main CSS */
 
 body {
-    background-color: #cddfd6cb;
+    background-color: #354259;
 }
 
 header {
-    background-color: #354259;
+    background-color: #81a0d195;
 }
 
 .logo {
@@ -78,7 +78,7 @@ header {
     border-radius: 50px;
     border: none;
     font-size: 30px;
-    background-color: #354259;
+    background-color: #81a0d195;
     color: white;
     height: 70px;
     width: 70px;
