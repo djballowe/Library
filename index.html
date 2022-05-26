@@ -23,19 +23,9 @@
                 </svg>
             </div>
         </header>
-        <div class="library-body">
-            <!--populate books here-->
-            <div class="books">
-                <p>Title</p>
-                <p>Author</p>
-                <p># pages</p>
-                <button id="status">Read</button>
-                <button id="remove">Remove</button>
-            </div>
-        </div>
-        <div class="pop-up">
-            <div class="form-container">
-                <form action="">
+        <div class="pop-up" id="form">
+            <div class="form-popup">
+                <form class="form-container" action="">
                     <h2>Add New Book</h2>
                     <input type="text" placeholder="Title">
                     <input type="text" placeholder="Author"> 
@@ -47,11 +37,21 @@
                     <button id="submit">Submit</button>
                 </form>
             </div>
-
+        </div>
+        <div class="library-body">
+            <!--populate books here-->
+            <div class="books">
+                <p>Title</p>
+                <p>Author</p>
+                <p># pages</p>
+                <button id="status">Read</button>
+                <button id="remove">Remove</button>
+            </div>
         </div>
         <div class="button">
-            <button id="add">+</button>
+            <button id="add" onclick="openForm()">+</button>
         </div>
     </div>
+    <script src="/resources/script.js"></script>
 </body>
 </html>

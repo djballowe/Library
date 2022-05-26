@@ -148,13 +148,15 @@ header {
 }
 
 .form-popup {
-    left: 45%;
-    top: 5%;
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 20%;
     transform: translate(-50%, 5%);
     z-index: 9;
 }
 
-form {
+.form-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -170,6 +172,10 @@ form {
     justify-content: center;
     align-items: center;
     font-size: 25px;
+}
+
+.read p {
+    margin-right: 20px;
 }
 
 #submit {
