@@ -148,7 +148,7 @@ header {
 }
 
 .form-popup {
-    display: none;
+    display: block;
     position: fixed;
     left: 50%;
     top: 20%;
@@ -188,6 +188,18 @@ header {
     width: 200px;
     margin-top: 40px;
     cursor: pointer;
+}
+
+#close {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    border-radius: 15px;
+    border: none;
+    background-color: white;
+    height: 20px;
+    width: 20px;
+    cursor: pointer; 
 }
 
 input {
