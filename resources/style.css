@@ -138,6 +138,59 @@ header {
     padding: 5px 0;
 }
 
+/* Add book form */
+
+
+.pop-up {
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.form-popup {
+    left: 45%;
+    top: 5%;
+    transform: translate(-50%, 5%);
+    z-index: 9;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 300px;
+    padding: 30px 10px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.read {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+
+#submit {
+    background-color: rgba(150, 219, 150, 0.784);
+    color: black;
+    border-radius: 10px;
+    border: none;
+    font-size: 25px;
+    height: 40px;
+    width: 200px;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+input {
+    padding: 5px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.267);
+}
+
 
 
 
