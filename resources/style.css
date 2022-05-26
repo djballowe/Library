@@ -89,6 +89,7 @@ header {
     width: 70px;
     position: fixed;
     bottom: 5%;
+    cursor: pointer;
 }
 
 .books  {
@@ -114,6 +115,7 @@ header {
     height: 40px;
     width: 200px;
     margin-top: 50px;
+    cursor: pointer;
 }
 
 #remove {
@@ -124,6 +126,7 @@ header {
     height: 40px;
     width: 200px;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .books button {
