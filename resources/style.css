@@ -63,8 +63,13 @@ header {
 }
 
 .library-body {
-    display: flex;
-    width: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(auto-fit, 1fr);
+    gap: 20px;
+    margin-inline: auto;
+    width: min(90%, 60rem);
+    margin-top: 50px;
 }
 
 .button {
@@ -85,4 +90,45 @@ header {
     position: fixed;
     bottom: 5%;
 }
+
+.books  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 25px;
+    
+}
+
+#status {
+    background-color: rgba(150, 219, 150, 0.784);
+    color: black;
+    border-radius: 10px;
+    border: none;
+    font-size: 25px;
+    height: 40px;
+    width: 200px;
+    margin-top: 50px;
+}
+
+#remove {
+    background-color: rgba(235, 150, 145, 0.784);
+    color: black;
+    border: none;
+    font-size: 25px;
+    height: 40px;
+    width: 200px;
+    border-radius: 10px;
+}
+
+.books button {
+    margin: 8px 0;
+}
+
+
+
+
 
