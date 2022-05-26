@@ -19,13 +19,18 @@ function addBook() {
 
 function openForm() {
     document.getElementById('form').style.display = 'block';
-    console.log('working');
 }
 
 function closeForm() {
     document.getElementById('form').style.display = 'none';
 }
 
+window.onclick = function (event) {
+    let modal = document.getElementById('pop-up');
+    if (event.target == modal) {
+        closeForm();
+    }
+}
 
 
 
