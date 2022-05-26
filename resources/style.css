@@ -64,7 +64,6 @@ header {
 
 .library-body {
     display: flex;
-    height: 70vh;
     width: auto;
 }
 
@@ -78,9 +77,12 @@ header {
 #add {
     border-radius: 50px;
     border: none;
-    font-size: 50px;
+    font-size: 30px;
     background-color: #354259;
     color: white;
-    padding: 20px 33px;
+    height: 70px;
+    width: 70px;
+    position: fixed;
+    bottom: 5%;
 }
 
