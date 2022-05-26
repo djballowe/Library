@@ -202,6 +202,11 @@ header {
     cursor: pointer; 
 }
 
+#close:hover {
+    color: white;
+    background-color: black;
+}
+
 input {
     padding: 5px;
     margin: 10px 0;
