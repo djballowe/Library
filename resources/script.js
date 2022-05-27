@@ -25,17 +25,27 @@ function addBook() {
 function loop() {
     const container = document.querySelector('#library');
     const book = document.createElement('div');
-    const info = document.createElement('p');
-    const button = document.createElement('button');
+    const author = document.createElement('p');
+    const title = document.createElement('p');
+    const page = document.createElement('p');
+    const status = document.createElement('button');
+    const remove = document.createElement('button');
     
         book.setAttribute('class', 'books');
         container.appendChild(book);
         const infoContainer = document.querySelector('.books');
-        info.textContent = Library[0].title;
-        infoContainer.appendChild(info);
-        
-        
-    
+        title.textContent = Library[0].title;
+        infoContainer.appendChild(title);
+        author.textContent = Library[0].author;
+        infoContainer.appendChild(author);
+        page.textContent = Library[0].pages;
+        infoContainer.appendChild(page);
+        status.setAttribute('id', 'status');
+        status.textContent = 'Read';
+        infoContainer.appendChild(status);
+        remove.setAttribute('id', 'remove');
+        remove.textContent = 'Remove';
+        infoContainer.appendChild(remove);
 }
 
 
