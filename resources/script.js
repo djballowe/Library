@@ -13,24 +13,30 @@ function addBook() {
 
 // pop up form for logging data
 
+const overlay = document.getElementById('overlay');
 
+overlay.addEventListener('click', () => {
+    closeForm();
+    console.log();
+})
 
-
-
-function openForm() {
+document.getElementById('add').addEventListener('click',
+function() {
     document.getElementById('form').style.display = 'block';
-}
+    overlay.style.display = 'block'
+})
 
-function closeForm() {
+
+document.getElementById('close').addEventListener('click', 
+function() {
     document.getElementById('form').style.display = 'none';
-}
+    overlay.style.display = 'none'
+})
 
-window.onclick = function (event) {
-    let modal = document.getElementById('form');
-    if (event.target == modal) {
-        closeForm();
-    }
-}
+
+
+
+
 
 
 
