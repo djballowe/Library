@@ -15,9 +15,10 @@ function addBook() {
 
 const overlay = document.getElementById('overlay');
 
-overlay.addEventListener('click', () => {
-    closeForm();
-    console.log();
+overlay.addEventListener('click', 
+function() {
+    document.getElementById('form').style.display = 'none';
+    overlay.style.display = 'none'
 })
 
 document.getElementById('add').addEventListener('click',
