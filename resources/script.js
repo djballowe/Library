@@ -1,14 +1,17 @@
 const container = document.querySelector('#library');
+const title = document.getElementById('title').value;
+const author = document.getElementById('author').value;
+const pages = document.getElementById('number').value;
+console.log(title);
 
 
-
-let book1 = new Book('Davids life', 'David', 500);
+let book1 = new Book(title, author, pages);
 let book2 = new Book('Janes life', 'Jane', 500);
 let book3 = new Book('Bob life', 'Bob', 500);
 
-console.log(book1);
 
-let Library = [book1, book2, book3];
+
+let Library = [];
 console.log(Library);
 
 function Book(title, author, pages) {
@@ -17,25 +20,14 @@ function Book(title, author, pages) {
     this.title = title;
     this.author = author;
     this.pages = pages;
-    this.card = function() {
-        const element = document.createElement('div');
-        element.classList.add('books');
-        container.appendChild(element);
-        const infoContainer = document.querySelector('.books');
-        const title = document.createElement('p');
-        title.textContent = this.title;
-        infoContainer.appendChild(title);
-    }
 }
 
-book1.card();
-book2.card();
 
 function addBook() {
     // adding book to array
     Library.push(book1);
     console.log(Library);
-    CardMaker();
+    cardMaker();
 }
 
 function cardMaker(providedData = Library) {
@@ -43,12 +35,19 @@ function cardMaker(providedData = Library) {
         const element = document.createElement('div');
         element.classList.add('books');
         container.appendChild(element);
-        const infoContainer = document.querySelector('.books');
-        const title = document.createElement('p');
-        title.textContent = item.title;
-        infoContainer.appendChild(title);
     })
 }
+
+ 
+    const addBook = (ev) => {
+        ev.preventDefault();
+        let book = {
+            title: document.getElementById('title').value,
+            author: document.getElementById('author').value,
+            pages: document.getElementById('number').value
+        }
+        Library.push(book);
+    }
 
 
 
@@ -75,6 +74,13 @@ document.getElementById('add').addEventListener('click',
      document.getElementById('form').style.display = 'none';
      overlay.style.display = 'none'
  })
+
+ document.getElementById('submit').addEventListener('click', 
+ function() {
+     addBook();
+ })
+
+
 
 
 
