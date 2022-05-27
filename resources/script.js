@@ -23,7 +23,7 @@ function Book(title, author, pages) {
 }
 
 
-function addBook() {
+function add() {
     // adding book to array
     Library.push(book1);
     console.log(Library);
@@ -75,10 +75,7 @@ document.getElementById('add').addEventListener('click',
      overlay.style.display = 'none'
  })
 
- document.getElementById('submit').addEventListener('click', 
- function() {
-     addBook();
- })
+
 
 
 
