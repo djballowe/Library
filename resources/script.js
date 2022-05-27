@@ -1,9 +1,10 @@
 let book1 = new Book('Davids life', 'David', 500);
-let book2 = new Book('Davids life', 'David', 500);
-let book3 = new Book('Davids life', 'David', 500);
+let book2 = new Book('Janes life', 'Jane', 500);
+let book3 = new Book('Bob life', 'Bob', 500);
+
 console.log(book1);
 
-let Library = [book1];
+let Library = [book1, book2, book3];
 console.log(Library);
 
 function Book(title, author, pages) {
@@ -17,8 +18,6 @@ function Book(title, author, pages) {
 function addBook() {
     // adding book to array
     Library.push(book1);
-    Library.push(book2);
-    Library.push(book3);
     console.log(Library);
 }
 
@@ -31,14 +30,15 @@ function loop() {
     const status = document.createElement('button');
     const remove = document.createElement('button');
     
+    for (let i = 0; i < Library.length; i++) {
         book.setAttribute('class', 'books');
         container.appendChild(book);
         const infoContainer = document.querySelector('.books');
-        title.textContent = Library[0].title;
+        title.textContent = Library[i].title;
         infoContainer.appendChild(title);
-        author.textContent = Library[0].author;
+        author.textContent = Library[i].author;
         infoContainer.appendChild(author);
-        page.textContent = Library[0].pages;
+        page.textContent = Library[i].pages;
         infoContainer.appendChild(page);
         status.setAttribute('id', 'status');
         status.textContent = 'Read';
@@ -46,6 +46,8 @@ function loop() {
         remove.setAttribute('id', 'remove');
         remove.textContent = 'Remove';
         infoContainer.appendChild(remove);
+        console.log('loop execute');
+    }
 }
 
 
@@ -65,7 +67,6 @@ document.getElementById('add').addEventListener('click',
  function() {
      document.getElementById('form').style.display = 'block';
      overlay.style.display = 'block'
-     loop();
  })
 
 
@@ -77,7 +78,7 @@ document.getElementById('add').addEventListener('click',
 
 
 
-
+loop();
 
 
 
