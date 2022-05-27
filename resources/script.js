@@ -1,3 +1,7 @@
+const container = document.querySelector('#library');
+
+
+
 let book1 = new Book('Davids life', 'David', 500);
 let book2 = new Book('Janes life', 'Jane', 500);
 let book3 = new Book('Bob life', 'Bob', 500);
@@ -13,41 +17,37 @@ function Book(title, author, pages) {
     this.title = title;
     this.author = author;
     this.pages = pages;
+    this.card = function() {
+        const element = document.createElement('div');
+        element.classList.add('books');
+        container.appendChild(element);
+        const infoContainer = document.querySelector('.books');
+        const title = document.createElement('p');
+        title.textContent = this.title;
+        infoContainer.appendChild(title);
+    }
 }
+
+book1.card();
+book2.card();
 
 function addBook() {
     // adding book to array
     Library.push(book1);
     console.log(Library);
+    CardMaker();
 }
 
-function loop() {
-    const container = document.querySelector('#library');
-    const book = document.createElement('div');
-    const author = document.createElement('p');
-    const title = document.createElement('p');
-    const page = document.createElement('p');
-    const status = document.createElement('button');
-    const remove = document.createElement('button');
-    
-    for (let i = 0; i < Library.length; i++) {
-        book.setAttribute('class', 'books');
-        container.appendChild(book);
+function cardMaker(providedData = Library) {
+    providedData.forEach((item) => {
+        const element = document.createElement('div');
+        element.classList.add('books');
+        container.appendChild(element);
         const infoContainer = document.querySelector('.books');
-        title.textContent = Library[i].title;
+        const title = document.createElement('p');
+        title.textContent = item.title;
         infoContainer.appendChild(title);
-        author.textContent = Library[i].author;
-        infoContainer.appendChild(author);
-        page.textContent = Library[i].pages;
-        infoContainer.appendChild(page);
-        status.setAttribute('id', 'status');
-        status.textContent = 'Read';
-        infoContainer.appendChild(status);
-        remove.setAttribute('id', 'remove');
-        remove.textContent = 'Remove';
-        infoContainer.appendChild(remove);
-        console.log('loop execute');
-    }
+    })
 }
 
 
@@ -78,7 +78,40 @@ document.getElementById('add').addEventListener('click',
 
 
 
-loop();
 
 
 
+
+
+
+
+
+
+// function loop() {
+//     const container = document.querySelector('#library');
+//     const book = document.createElement('div');
+//     const author = document.createElement('p');
+//     const title = document.createElement('p');
+//     const page = document.createElement('p');
+//     const status = document.createElement('button');
+//     const remove = document.createElement('button');
+    
+//     for (let i = 0; i < Library.length; i++) {
+//         book.setAttribute('class', 'books');
+//         container.appendChild(book);
+//         const infoContainer = document.querySelector('.books');
+//         title.textContent = Library[i].title;
+//         infoContainer.appendChild(title);
+//         author.textContent = Library[i].author;
+//         infoContainer.appendChild(author);
+//         page.textContent = Library[i].pages;
+//         infoContainer.appendChild(page);
+//         status.setAttribute('id', 'status');
+//         status.textContent = 'Read';
+//         infoContainer.appendChild(status);
+//         remove.setAttribute('id', 'remove');
+//         remove.textContent = 'Remove';
+//         infoContainer.appendChild(remove);
+//         console.log('loop execute');
+//     }
+// }
