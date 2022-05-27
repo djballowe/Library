@@ -29,14 +29,20 @@
                     <form class="form-container" id="form-container" action="">
                         <button id="close">X</button>
                         <h2>Add New Book</h2>
-                        <input type="text" placeholder="Title">
-                        <input type="text" placeholder="Author"> 
-                        <input type="number" placeholder="Pages">
+                        <label id="title">
+                            <input type="text" placeholder="Title">
+                        </label>
+                        <label id="author">
+                            <input type="text" placeholder="Author"> 
+                        </label>
+                        <label id="number">
+                            <input type="number" placeholder="Pages">
+                        </label>
                         <div class="read">
                             <p>Read?</p> 
                             <input type="checkbox">
                         </div>  
-                        <button id="submit">Submit</button>
+                        <button id="submit" type="submit" value="submit" onclick="addBook()">Submit</button>
                     </form>
                 </div>
             </div>
