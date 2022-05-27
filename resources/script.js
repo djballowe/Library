@@ -26,7 +26,7 @@ function closeForm() {
 }
 
 window.onclick = function (event) {
-    let modal = document.getElementById('pop-up');
+    let modal = document.getElementById('form');
     if (event.target == modal) {
         closeForm();
     }

@@ -52,6 +52,16 @@ header {
     background-color: #81a0d195;
 }
 
+.overlay {
+    display: block;
+    opacity: 0;
+    background: black;
+    position: fixed;
+    width: 100vw;
+    height: 100vw;
+    z-index: 100;
+}
+
 .logo {
     display: flex;
     align-items: center;
@@ -151,9 +161,9 @@ header {
     display: none;
     position: fixed;
     left: 50%;
-    top: 20%;
-    transform: translate(-50%, 5%);
-    z-index: 9;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
 }
 
 .form-container {
