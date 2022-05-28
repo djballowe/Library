@@ -10,7 +10,7 @@ let book1 = new Book ('Davids Life', 'David', 500, true);
 let book2 = new Book ('Janes Life', 'Jane', 500, true);
 let book3 = new Book ('Bobs Life', 'Bob', 500, true);
 
-let Library = [book1, book2, book3];
+let Library = [];
 console.log(Library);
 
 // constructor function for creating the Book objects
@@ -24,20 +24,36 @@ function Book(title, author, pages, readStatus) {
 
 
 function cardMaker(providedData = Library) {
-    // providedData.forEach((item) => {
-    //     const element = document.createElement('div');
-    //     element.classList.add();
-    //     container.appendChild(element);
-    // })
     for (let i = 0; i < Library.length; i++) {
-        const element = document.createElement('div');
-        element.classList.add('books');
-        element.setAttribute('id', i);
-        container.appendChild(element);
+        if (Library.length === 1) {
+            const element = document.createElement('div');
+            element.classList.add('books');
+            element.setAttribute('id', i);
+            container.appendChild(element);
+            const infoContainer = document.getElementById(i);
+            const title = document.createElement('p');
+            const author = document.createElement('p');
+            const page = document.createElement('p');
+            const remove = document.createElement('button');
+            const status = document.createElement('button');
+            title.textContent = Library[i].title;
+            author.textContent = Library[i].author;
+            page.textContent = Library[i].pages;
+            remove.setAttribute('id', 'remove');
+            status.setAttribute('id', 'status');
+            remove.textContent = 'Remove';
+            status.textContent = 'Read';
+            infoContainer.appendChild(title);
+            infoContainer.appendChild(author);
+            infoContainer.appendChild(page);
+            infoContainer.appendChild(remove);
+            infoContainer.appendChild(status);
+        } else if (Library.length > 1) {
+            
+        }
     }
 }
 
-cardMaker();
 
  
 // grabbing data from the form on submit and calling the constructor function
