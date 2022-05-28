@@ -49,9 +49,9 @@ function cardMaker(providedData = Library) {
         infoContainer.appendChild(remove);
         infoContainer.appendChild(status);
         
-        if (Library[i].readStatus === true) {
+        if (Library[index].readStatus === true) {
             status.classList.add('on');
-        } else if (Library[i].readStatus === false) {
+        } else if (Library[index].readStatus === false) {
             status.classList.add('off');
         } 
         infoContainer.appendChild(status);
