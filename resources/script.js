@@ -41,6 +41,9 @@ form.addEventListener('submit', function(event) {
 function add(book) {
     // adding book to array
     Library.push(book);
+    document.getElementById('title').value = '';
+    document.getElementById('author').value = '';
+    document.getElementById('pages').value = '';
 }
 
 
