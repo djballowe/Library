@@ -1,7 +1,5 @@
 const container = document.querySelector('#library');
-// const title = document.getElementById('title').value;
-// const author = document.getElementById('author').value;
-// const pages = document.getElementById('pages').value;
+
 
 
 // storing the books in an array
@@ -24,18 +22,41 @@ function Book(title, author, pages, readStatus) {
 
 
 function cardMaker(providedData = Library) {
+    const title = document.createElement('p');
+    const author = document.createElement('p');
+    const page = document.createElement('p');
+    const remove = document.createElement('button');
+    const status = document.createElement('button');
     for (let i = 0; i < Library.length; i++) {
-        if (Library.length === 1) {
+        if (Library.length > 1) {
+            let index = i + 1;
+            console.log(`the index is currently ${i}`);
+            console.log(`the index I want read is ${index}`);
+            const element = document.createElement('div');
+            element.classList.add('books');
+            element.setAttribute('id', index);
+            container.appendChild(element);
+            const infoContainer = document.getElementById(index);
+            title.textContent = Library[index].title;
+            author.textContent = Library[index].author;
+            page.textContent = Library[index].pages;
+            remove.setAttribute('id', 'remove');
+            status.setAttribute('id', 'status');
+            remove.textContent = 'Remove';
+            status.textContent = 'Read';
+            infoContainer.appendChild(title);
+            infoContainer.appendChild(author);
+            infoContainer.appendChild(page);
+            infoContainer.appendChild(remove);
+            infoContainer.appendChild(status);
+        }
+        
+        if (Library.length <= 1) {
             const element = document.createElement('div');
             element.classList.add('books');
             element.setAttribute('id', i);
             container.appendChild(element);
             const infoContainer = document.getElementById(i);
-            const title = document.createElement('p');
-            const author = document.createElement('p');
-            const page = document.createElement('p');
-            const remove = document.createElement('button');
-            const status = document.createElement('button');
             title.textContent = Library[i].title;
             author.textContent = Library[i].author;
             page.textContent = Library[i].pages;
@@ -48,11 +69,11 @@ function cardMaker(providedData = Library) {
             infoContainer.appendChild(page);
             infoContainer.appendChild(remove);
             infoContainer.appendChild(status);
-        } else if (Library.length > 1) {
-            
         }
     }
 }
+
+
 
 
  
@@ -113,32 +134,3 @@ document.getElementById('add').addEventListener('click',
     document.getElementById('form').style.display = 'none';
     overlay.style.display = 'none'
  })
-
-// function loop() {
-//     const container = document.querySelector('#library');
-//     const book = document.createElement('div');
-//     const author = document.createElement('p');
-//     const title = document.createElement('p');
-//     const page = document.createElement('p');
-//     const status = document.createElement('button');
-//     const remove = document.createElement('button');
-    
-//     for (let i = 0; i < Library.length; i++) {
-//         book.setAttribute('class', 'books');
-//         container.appendChild(book);
-//         const infoContainer = document.querySelector('.books');
-//         title.textContent = Library[i].title;
-//         infoContainer.appendChild(title);
-//         author.textContent = Library[i].author;
-//         infoContainer.appendChild(author);
-//         page.textContent = Library[i].pages;
-//         infoContainer.appendChild(page);
-//         status.setAttribute('id', 'status');
-//         status.textContent = 'Read';
-//         infoContainer.appendChild(status);
-//         remove.setAttribute('id', 'remove');
-//         remove.textContent = 'Remove';
-//         infoContainer.appendChild(remove);
-//         console.log('loop execute');
-//     }
-// }
