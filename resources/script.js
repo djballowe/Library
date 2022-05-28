@@ -1,5 +1,5 @@
 const container = document.querySelector('#library');
-
+const buttons = document.querySelectorAll('button');
 
 
 // storing the books in an array
@@ -16,6 +16,7 @@ function Book(title, author, pages, readStatus) {
     this.readStatus = readStatus;
 }
 
+// adding tiles to the DOM
 
 function cardMaker(providedData = Library) {
     const title = document.createElement('p');
@@ -58,14 +59,9 @@ function cardMaker(providedData = Library) {
         break;
     }
 }
+
+
     
- 
-
-
-
-
-
- 
 // grabbing data from the form on submit and calling the constructor function
 
 const form = document.forms[0];
@@ -74,7 +70,6 @@ form.addEventListener('submit', function(event) {
     event.preventDefault();
     const {title, author, pages, checkbox} = this.elements;
 
-    console.log(title.value, author.value, pages.value, checkbox.value)
     let book1 = new Book(title.value, author.value, pages.value, checkbox.checked); 
     add(book1);
 })
@@ -94,34 +89,42 @@ function add(book) {
 
  // pop up form for logging data
 
- const overlay = document.getElementById('overlay');
+const overlay = document.getElementById('overlay');
 
- overlay.addEventListener('click', 
- function() {
+overlay.addEventListener('click', 
+function() {
     document.getElementById('form').style.display = 'none';
     overlay.style.display = 'none'
- })
+})
 
 document.getElementById('add').addEventListener('click',
  function() {
     document.getElementById('form').style.display = 'block';
     overlay.style.display = 'block'
- })
+})
 
 
- document.getElementById('close').addEventListener('click', 
- function() {
+document.getElementById('close').addEventListener('click', 
+function() {
     document.getElementById('form').style.display = 'none';
     overlay.style.display = 'none'
     document.getElementById('title').value = '';
     document.getElementById('author').value = '';
     document.getElementById('pages').value = '';
- })
+})
 
- document.getElementById('submit').addEventListener('click', 
- function() {
+document.getElementById('submit').addEventListener('click', 
+function() {
     document.getElementById('form').style.display = 'none';
     overlay.style.display = 'none'
- })
+})
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        if(button.id === 'status') {
+            console.log('test');
+        }
+    })
+})
 
 
