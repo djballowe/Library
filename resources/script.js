@@ -11,15 +11,18 @@ let book3 = new Book('Bob life', 'Bob', 500);
 
 
 
+
+
 let Library = [];
 console.log(Library);
 
-function Book(title, author, pages) {
+function Book(title, author, pages, readStatus) {
     // constructor this needs to take the data logged on the form and create objects to store in the
     // library array
     this.title = title;
     this.author = author;
     this.pages = pages;
+    this.readStatus = readStatus;
 }
 
 
