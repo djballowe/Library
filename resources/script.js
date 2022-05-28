@@ -1,16 +1,8 @@
 const container = document.querySelector('#library');
-const title = document.getElementById('title').value;
-const author = document.getElementById('author').value;
-const pages = document.getElementById('number').value;
+// const title = document.getElementById('title').value;
+// const author = document.getElementById('author').value;
+// const pages = document.getElementById('pages').value;
 console.log(title);
-
-
-let book1 = new Book(title, author, pages);
-let book2 = new Book('Janes life', 'Jane', 500);
-let book3 = new Book('Bob life', 'Bob', 500);
-
-
-
 
 
 let Library = [];
@@ -25,14 +17,6 @@ function Book(title, author, pages, readStatus) {
     this.readStatus = readStatus;
 }
 
-
-function add() {
-    // adding book to array
-    Library.push(book1);
-    console.log(Library);
-    cardMaker();
-}
-
 function cardMaker(providedData = Library) {
     providedData.forEach((item) => {
         const element = document.createElement('div');
@@ -42,15 +26,22 @@ function cardMaker(providedData = Library) {
 }
 
  
-    const addBook = (ev) => {
-        ev.preventDefault();
-        let book = {
-            title: document.getElementById('title').value,
-            author: document.getElementById('author').value,
-            pages: document.getElementById('number').value
-        }
-        Library.push(book);
-    }
+const form = document.forms[0];
+
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const {title, author, pages, checkbox} = this.elements;
+
+    console.log(title.value, author.value, pages.value, checkbox.value)
+    let book1 = new Book(title.value, author.value, pages.value, checkbox.value); 
+    console.log(book1);
+    add(book1);
+})
+
+function add(book) {
+    // adding book to array
+    Library.push(book);
+}
 
 
 
@@ -73,6 +64,12 @@ document.getElementById('add').addEventListener('click',
 
 
  document.getElementById('close').addEventListener('click', 
+ function() {
+     document.getElementById('form').style.display = 'none';
+     overlay.style.display = 'none'
+ })
+
+ document.getElementById('submit').addEventListener('click', 
  function() {
      document.getElementById('form').style.display = 'none';
      overlay.style.display = 'none'

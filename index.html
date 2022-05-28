@@ -25,21 +25,21 @@
             </header>
             <div class="pop-up" id="pop-up">
                 <div class="form-popup" id="form">
-                    <form class="form-container" id="form-container" onsubmit="addBook()">
+                    <form class="form-container" id="form-container">
                         <button id="close">X</button>
                         <h2>Add New Book</h2>
                         
-                            <input type="text" placeholder="Title" id="title">
+                            <input type="text" placeholder="Title" id="title" name="title" required>
                         
                         
-                            <input type="text" placeholder="Author" id="author"> 
+                            <input type="text" placeholder="Author" id="author" name="author" required> 
                        
                         
-                            <input type="number" placeholder="Pages" id="number">
+                            <input type="number" placeholder="Pages" id="pages" name="pages" required>
                         
                         <div class="read">
                             <p>Read?</p> 
-                            <input type="checkbox">
+                            <input type="checkbox" id="checkbox" name="checkbox">
                         </div>  
                         <button id="submit">Submit</button>
                     </form>
