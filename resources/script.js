@@ -34,7 +34,6 @@ form.addEventListener('submit', function(event) {
 
     console.log(title.value, author.value, pages.value, checkbox.value)
     let book1 = new Book(title.value, author.value, pages.value, checkbox.value); 
-    console.log(book1);
     add(book1);
 })
 
@@ -55,27 +54,30 @@ function add(book) {
 
  overlay.addEventListener('click', 
  function() {
-     document.getElementById('form').style.display = 'none';
-     overlay.style.display = 'none'
+    document.getElementById('form').style.display = 'none';
+    overlay.style.display = 'none'
  })
 
 document.getElementById('add').addEventListener('click',
  function() {
-     document.getElementById('form').style.display = 'block';
-     overlay.style.display = 'block'
+    document.getElementById('form').style.display = 'block';
+    overlay.style.display = 'block'
  })
 
 
  document.getElementById('close').addEventListener('click', 
  function() {
-     document.getElementById('form').style.display = 'none';
-     overlay.style.display = 'none'
+    document.getElementById('form').style.display = 'none';
+    overlay.style.display = 'none'
+    document.getElementById('title').value = '';
+    document.getElementById('author').value = '';
+    document.getElementById('pages').value = '';
  })
 
  document.getElementById('submit').addEventListener('click', 
  function() {
-     document.getElementById('form').style.display = 'none';
-     overlay.style.display = 'none'
+    document.getElementById('form').style.display = 'none';
+    overlay.style.display = 'none'
  })
 
 
