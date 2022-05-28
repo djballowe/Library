@@ -116,8 +116,20 @@ header {
     
 }
 
-#status {
+.on {
     background-color: rgba(150, 219, 150, 0.784);
+    color: black;
+    border-radius: 10px;
+    border: none;
+    font-size: 25px;
+    height: 40px;
+    width: 200px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.off {
+    background-color: rgba(235, 150, 145, 0.784);
     color: black;
     border-radius: 10px;
     border: none;

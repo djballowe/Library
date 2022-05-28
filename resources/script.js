@@ -4,10 +4,6 @@ const container = document.querySelector('#library');
 
 // storing the books in an array
 
-let book1 = new Book ('Davids Life', 'David', 500, true);
-let book2 = new Book ('Janes Life', 'Jane', 500, true);
-let book3 = new Book ('Bobs Life', 'Bob', 500, true);
-
 let Library = [];
 console.log(Library);
 
@@ -42,7 +38,9 @@ function cardMaker(providedData = Library) {
             author.textContent = Library[index].author;
             page.textContent = Library[index].pages;
             remove.setAttribute('id', 'remove');
+            remove.setAttribute('data', index);
             status.setAttribute('id', 'status');
+            status.setAttribute('data', index);
             remove.textContent = 'Remove';
             status.textContent = 'Read';
             infoContainer.appendChild(title);
@@ -64,17 +62,26 @@ function cardMaker(providedData = Library) {
             author.textContent = Library[i].author;
             page.textContent = Library[i].pages;
             remove.setAttribute('id', 'remove');
-            status.setAttribute('id', 'status');
+            remove.setAttribute('data', i);
             remove.textContent = 'Remove';
             status.textContent = 'Read';
             infoContainer.appendChild(title);
             infoContainer.appendChild(author);
             infoContainer.appendChild(page);
             infoContainer.appendChild(remove);
-            infoContainer.appendChild(status);
         }
+            if (Library[i].readStatus === true) {
+                 status.classList.add('on');
+             } else if (Library[i].readStatus === false) {
+                 status.classList.add('off');
+             }
+             infoContainer.appendChild(status);
+        }
+
     }
-}
+    
+ 
+
 
 
 
@@ -89,7 +96,7 @@ form.addEventListener('submit', function(event) {
     const {title, author, pages, checkbox} = this.elements;
 
     console.log(title.value, author.value, pages.value, checkbox.value)
-    let book1 = new Book(title.value, author.value, pages.value, checkbox.value); 
+    let book1 = new Book(title.value, author.value, pages.value, checkbox.checked); 
     add(book1);
 })
 
@@ -137,3 +144,5 @@ document.getElementById('add').addEventListener('click',
     document.getElementById('form').style.display = 'none';
     overlay.style.display = 'none'
  })
+
+
