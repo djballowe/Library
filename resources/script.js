@@ -29,7 +29,8 @@ function cardMaker(providedData = Library) {
     const status = document.createElement('button');
     for (let i = 0; i < Library.length; i++) {
         if (Library.length > 1) {
-            let index = i + 1;
+            let index = Library.length - 1;
+             
             console.log(`the index is currently ${i}`);
             console.log(`the index I want read is ${index}`);
             const element = document.createElement('div');
@@ -49,6 +50,8 @@ function cardMaker(providedData = Library) {
             infoContainer.appendChild(page);
             infoContainer.appendChild(remove);
             infoContainer.appendChild(status);
+            break;
+            
         }
         
         if (Library.length <= 1) {
