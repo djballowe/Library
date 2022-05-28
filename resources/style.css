@@ -138,6 +138,7 @@ header {
     width: 200px;
     margin-top: 20px;
     cursor: pointer;
+    text-decoration: line-through;
 }
 
 #remove {
