@@ -2,30 +2,46 @@ const container = document.querySelector('#library');
 // const title = document.getElementById('title').value;
 // const author = document.getElementById('author').value;
 // const pages = document.getElementById('pages').value;
-console.log(title);
 
 
-let Library = [];
+// storing the books in an array
+
+let book1 = new Book ('Davids Life', 'David', 500, true);
+let book2 = new Book ('Janes Life', 'Jane', 500, true);
+let book3 = new Book ('Bobs Life', 'Bob', 500, true);
+
+let Library = [book1, book2, book3];
 console.log(Library);
 
+// constructor function for creating the Book objects
+
 function Book(title, author, pages, readStatus) {
-    // constructor this needs to take the data logged on the form and create objects to store in the
-    // library array
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.readStatus = readStatus;
 }
 
+
 function cardMaker(providedData = Library) {
-    providedData.forEach((item) => {
+    // providedData.forEach((item) => {
+    //     const element = document.createElement('div');
+    //     element.classList.add();
+    //     container.appendChild(element);
+    // })
+    for (let i = 0; i < Library.length; i++) {
         const element = document.createElement('div');
         element.classList.add('books');
+        element.setAttribute('id', i);
         container.appendChild(element);
-    })
+    }
 }
 
+cardMaker();
+
  
+// grabbing data from the form on submit and calling the constructor function
+
 const form = document.forms[0];
 
 form.addEventListener('submit', function(event) {
@@ -37,12 +53,14 @@ form.addEventListener('submit', function(event) {
     add(book1);
 })
 
+// adding book to array and clearing the form for the next submission
+
 function add(book) {
-    // adding book to array
     Library.push(book);
     document.getElementById('title').value = '';
     document.getElementById('author').value = '';
     document.getElementById('pages').value = '';
+    cardMaker();
 }
 
 
@@ -79,21 +97,6 @@ document.getElementById('add').addEventListener('click',
     document.getElementById('form').style.display = 'none';
     overlay.style.display = 'none'
  })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // function loop() {
 //     const container = document.querySelector('#library');
