@@ -24,61 +24,40 @@ function cardMaker(providedData = Library) {
     const remove = document.createElement('button');
     const status = document.createElement('button');
     for (let i = 0; i < Library.length; i++) {
-        if (Library.length > 1) {
-            let index = Library.length - 1;
-             
-            console.log(`the index is currently ${i}`);
-            console.log(`the index I want read is ${index}`);
-            const element = document.createElement('div');
-            element.classList.add('books');
-            element.setAttribute('id', index);
-            container.appendChild(element);
-            const infoContainer = document.getElementById(index);
-            title.textContent = Library[index].title;
-            author.textContent = Library[index].author;
-            page.textContent = Library[index].pages;
-            remove.setAttribute('id', 'remove');
-            remove.setAttribute('data', index);
-            status.setAttribute('id', 'status');
-            status.setAttribute('data', index);
-            remove.textContent = 'Remove';
-            status.textContent = 'Read';
-            infoContainer.appendChild(title);
-            infoContainer.appendChild(author);
-            infoContainer.appendChild(page);
-            infoContainer.appendChild(remove);
-            infoContainer.appendChild(status);
-            break;
-            
-        }
         
-        if (Library.length <= 1) {
-            const element = document.createElement('div');
-            element.classList.add('books');
-            element.setAttribute('id', i);
-            container.appendChild(element);
-            const infoContainer = document.getElementById(i);
-            title.textContent = Library[i].title;
-            author.textContent = Library[i].author;
-            page.textContent = Library[i].pages;
-            remove.setAttribute('id', 'remove');
-            remove.setAttribute('data', i);
-            remove.textContent = 'Remove';
-            status.textContent = 'Read';
-            infoContainer.appendChild(title);
-            infoContainer.appendChild(author);
-            infoContainer.appendChild(page);
-            infoContainer.appendChild(remove);
-        }
-            if (Library[i].readStatus === true) {
-                 status.classList.add('on');
-             } else if (Library[i].readStatus === false) {
-                 status.classList.add('off');
-             }
-             infoContainer.appendChild(status);
-        }
-
+        let index = Library.length - 1;
+             
+        console.log(`the index is currently ${i}`);
+        console.log(`the index I want read is ${index}`);
+        const element = document.createElement('div');
+        element.classList.add('books');
+        element.setAttribute('id', index);
+        container.appendChild(element);
+        const infoContainer = document.getElementById(index);
+        title.textContent = Library[index].title;
+        author.textContent = Library[index].author;
+        page.textContent = Library[index].pages;
+        remove.setAttribute('id', 'remove');
+        remove.setAttribute('data', index);
+        status.setAttribute('id', 'status');
+        status.setAttribute('data', index);
+        remove.textContent = 'Remove';
+        status.textContent = 'Read';
+        infoContainer.appendChild(title);
+        infoContainer.appendChild(author);
+        infoContainer.appendChild(page);
+        infoContainer.appendChild(remove);
+        infoContainer.appendChild(status);
+        
+        if (Library[i].readStatus === true) {
+            status.classList.add('on');
+        } else if (Library[i].readStatus === false) {
+            status.classList.add('off');
+        } 
+        infoContainer.appendChild(status);
+        break;
     }
+}
     
  
 
