@@ -7,6 +7,8 @@ const container = document.querySelector('#library');
 let Library = [];
 console.log(Library);
 
+
+
 // constructor function for creating the Book objects
 
 function Book(title, author, pages, readStatus) {
@@ -80,6 +82,7 @@ function add(book) {
     document.getElementById('title').value = '';
     document.getElementById('author').value = '';
     document.getElementById('pages').value = '';
+    document.getElementById('checkbox').checked = '';
     cardMaker();
 }
 
