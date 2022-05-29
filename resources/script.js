@@ -28,18 +28,16 @@ function cardMaker(providedData = Library) {
         
         let index = Library.length - 1;
              
-        console.log(`the index is currently ${i}`);
-        console.log(`the index I want read is ${index}`);
         const element = document.createElement('div');
         element.classList.add('books');
         element.setAttribute('id', `book-${index}`);
+        element.setAttribute('data-type', index);
         container.appendChild(element);
         const infoContainer = document.getElementById(`book-${index}`);
         title.textContent = Library[index].title;
         author.textContent = Library[index].author;
         page.textContent = Library[index].pages;
         remove.setAttribute('id', 'remove');
-        remove.setAttribute('data', index);
         status.setAttribute('id', 'status');
         status.setAttribute('data', index);
         remove.textContent = 'Remove';
@@ -120,7 +118,7 @@ function() {
     overlay.style.display = 'none'
 })
 
-
+// button functionality for toggle read status and remove
 
 document.querySelector('body').addEventListener('click', function(e) {
     if (e.target.id === 'status') {
@@ -135,6 +133,7 @@ document.querySelector('body').addEventListener('click', function(e) {
     }
     if (e.target.id === 'remove') {
         const remove = e.target.parentElement.id;
+        const index = e.target.parentElement.getAttribute('data-type');
         const all = document.querySelector(`#${remove}`);
         const num = document.getElementById(remove).childElementCount;
         for (let i = 0; i < num; i++) {
@@ -145,7 +144,13 @@ document.querySelector('body').addEventListener('click', function(e) {
             }
         }
         all.remove();
+        editArray(index);
+        
 
     }
 });
 
+function editArray(index) {
+    Library.splice(index, 1);
+    console.log(Library);
+}
