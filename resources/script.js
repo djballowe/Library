@@ -1,5 +1,5 @@
 const container = document.querySelector('#library');
-const buttons = document.querySelectorAll('button');
+
 
 
 // storing the books in an array
@@ -56,6 +56,7 @@ function cardMaker(providedData = Library) {
             status.classList.add('off');
         } 
         infoContainer.appendChild(status);
+
         break;
     }
 }
@@ -119,12 +120,11 @@ function() {
     overlay.style.display = 'none'
 })
 
-buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-        if(button.id === 'status') {
-            console.log('test');
-        }
-    })
-})
 
+
+document.querySelector('body').addEventListener('click', function(e) {
+    if (e.target.id === 'status') {
+        console.log('AAAAAAAAAAAAAAHHHHHHHHHHHHHHHHHH');
+    }
+});
 
