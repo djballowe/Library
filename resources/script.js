@@ -137,7 +137,6 @@ document.querySelector('body').addEventListener('click', function(e) {
         const remove = e.target.parentElement.id;
         const all = document.querySelector(`#${remove}`);
         const num = document.getElementById(remove).childElementCount;
-    
         for (let i = 0; i < num; i++) {
             let child = all.lastElementChild;
             while (child) {
@@ -145,6 +144,7 @@ document.querySelector('body').addEventListener('click', function(e) {
                 child = all.lastElementChild;
             }
         }
+        all.remove();
 
     }
 });
