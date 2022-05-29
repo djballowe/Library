@@ -122,13 +122,17 @@ function() {
 
 document.querySelector('body').addEventListener('click', function(e) {
     if (e.target.id === 'status') {
+        const index = e.target.parentElement.getAttribute('data-type');
         const read = e.target;
         if (read.classList.contains('on')) {
             read.classList.toggle('on');
             read.classList.add('off');
+            Library[index].readStatus = false;
+
         } else if (read.classList.contains('off')) {
             read.classList.toggle('off');
             read.classList.add('on');
+            Library[index].readStatus = true;
         }
     }
     if (e.target.id === 'remove') {
@@ -150,7 +154,8 @@ document.querySelector('body').addEventListener('click', function(e) {
     }
 });
 
+// delete object in array
+
 function editArray(index) {
     Library.splice(index, 1);
-    console.log(Library);
 }
