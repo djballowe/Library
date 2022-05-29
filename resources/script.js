@@ -32,9 +32,9 @@ function cardMaker(providedData = Library) {
         console.log(`the index I want read is ${index}`);
         const element = document.createElement('div');
         element.classList.add('books');
-        element.setAttribute('id', index);
+        element.setAttribute('id', `book-${index}`);
         container.appendChild(element);
-        const infoContainer = document.getElementById(index);
+        const infoContainer = document.getElementById(`book-${index}`);
         title.textContent = Library[index].title;
         author.textContent = Library[index].author;
         page.textContent = Library[index].pages;
@@ -124,7 +124,28 @@ function() {
 
 document.querySelector('body').addEventListener('click', function(e) {
     if (e.target.id === 'status') {
-        console.log('AAAAAAAAAAAAAAHHHHHHHHHHHHHHHHHH');
+        const read = e.target;
+        if (read.classList.contains('on')) {
+            read.classList.toggle('on');
+            read.classList.add('off');
+        } else if (read.classList.contains('off')) {
+            read.classList.toggle('off');
+            read.classList.add('on');
+        }
+    }
+    if (e.target.id === 'remove') {
+        const remove = e.target.parentElement.id;
+        const all = document.querySelector(`#${remove}`);
+        const num = document.getElementById(remove).childElementCount;
+    
+        for (let i = 0; i < num; i++) {
+            let child = all.lastElementChild;
+            while (child) {
+                all.removeChild(child);
+                child = all.lastElementChild;
+            }
+        }
+
     }
 });
 
