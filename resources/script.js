@@ -117,8 +117,12 @@ function() {
 
 document.getElementById('submit').addEventListener('click', 
 function() {
-    document.getElementById('form').style.display = 'none';
-    overlay.style.display = 'none'
+    if (document.getElementById('title').value === '' || document.getElementById('author').value === '' || document.getElementById('pages').value === '') {
+        alert('Please fill out all feilds');
+    } else {
+        document.getElementById('form').style.display = 'none';
+        overlay.style.display = 'none'
+    }
 })
 
 // button functionality for toggle read status and remove
